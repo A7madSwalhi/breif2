@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Quiz Page</title>
+        <style>
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+
+                to {
+                    opacity: 1;
+                }
+            }
+
+            body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #f0f2f5;
+                margin: 0;
+                animation: fadeIn 2s;
+            }
+
+            .quiz-container {
+                background-color: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                width: 300px;
+                text-align: center;
+                animation: fadeIn 1s ease-in-out;
+            }
+
+            .quiz-container h2 {
+                margin-bottom: 20px;
+            }
+
+            .quiz-container form {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .quiz-container form label {
+                margin-bottom: 10px;
+                transition: transform 0.3s;
+            }
+
+            .quiz-container form label:hover {
+                transform: scale(1.05);
+            }
+
+            .quiz-container form input[type="radio"] {
+                margin-right: 10px;
+            }
+
+            .quiz-container form button {
+                margin-top: 20px;
+                padding: 10px;
+                border: none;
+                background-color: #00aaff;
+                color: white;
+                border-radius: 5px;
+                cursor: pointer;
+                width: 100%;
+                transition: background-color 0.3s, transform 0.3s;
+            }
+
+            .quiz-container form button:hover {
+                background-color: #0088cc;
+                transform: scale(1.05);
+            }
+
+            .error {
+                color: red;
+                display: none;
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="quiz-container">
+            <h2 id="question">Which language runs in a web browser?</h2>
+            <form id="quizForm">
+                <label>
+                    <input type="radio" name="language" value="Java" /> Java
+                </label>
+                <label>
+                    <input type="radio" name="language" value="C" /> C
+                </label>
+                <label>
+                    <input type="radio" name="language" value="Python" /> Python
+                </label>
+                <label>
+                    <input type="radio" name="language" value="JavaScript" />
+                    JavaScript
+                </label>
+                <button type="button" onclick="nextQuestion()">Submit</button>
+            </form>
+            <div class="error" id="error">Please select an answer!</div>
+        </div>
+        <script src="main.js"></script>
+    </body>
+</html>
